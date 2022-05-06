@@ -38,7 +38,7 @@ def new_comment(request,pizza_id):
         if form.is_valid():
             new_comment = form.save(commit=False)
             new_comment.pizza = pizza
-            new_comment.owner = request.user
+            #new_comment.owner = request.user
             new_comment.save()
 
             return redirect('pizzas:pizza', pizza_id=pizza_id)

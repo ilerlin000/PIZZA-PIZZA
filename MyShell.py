@@ -20,3 +20,8 @@ toppings = p.topping_set.all()
 
 for t in toppings:
     print(t)
+
+comments = p.comment_set.all()
+
+for c in comments:
+    print(c)
