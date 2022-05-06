@@ -1,0 +1,22 @@
+{% extends "pizzas/base.html" %}
+
+{% block page_header %}
+<div class="jumbotron" style="background-color:#F88379">
+    <h1 class="display-3">Find your favorite pizza!</h1>
+
+    <p class="lead">Pizzeria shows an assortment of pizzas and
+        their respective toppings.</p>
+
+    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button"
+        style="background-color:#FFFF8F; border-color:#FFFF8F;color:#000000">
+        Register &raquo;</a>
+</div>
+
+<style>
+    body {
+        background-image: url("https://st3.depositphotos.com/30857730/34603/v/380/depositphotos_346030130-stock-illustration-pizza-slice-pattern-design-pizza.jpg?forcejpeg=true")
+    }
+</style>
+
+
+{% endblock page_header %}
