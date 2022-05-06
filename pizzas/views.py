@@ -3,13 +3,14 @@ from .forms import CommentForm
 from .models import Pizza
 from django.contrib.auth.decorators import login_required 
 
+
 # Create your views here.
 def index(request):
-    return render(request,'pizzas/index.html')
+    return render(request, 'pizzas/index.html')
 
 @login_required
 def pizzas(request):
-    pizzas = Pizza.objects.order_by('date_added') 
+    pizzas = Pizza.objects.order_by('date_added')
    
     context = {'pizzas':pizzas}
 
