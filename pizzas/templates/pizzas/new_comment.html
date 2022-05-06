@@ -10,8 +10,15 @@
     {% csrf_token %}
     {{ form.as_p }}
 
-    <button name="submit">Add comment</button>
+    <button name="submit" style="background-color:#fffdd0; border-color:#fffdd0;color:#000000">
+        Add comment</button>
 
 </form>
+
+<style>
+    body {
+        background-image: url("https://wallpapercave.com/uwp/uwp2207931.png");
+    }
+</style>
 
 {% endblock content %}
