@@ -9,7 +9,7 @@ def index(request):
 
 @login_required
 def pizzas(request):
-    pizzas = Pizza.objects.order_by('date_added') # minus sign here if you want to do descending order
+    pizzas = Pizza.objects.order_by('date_added') #
    
     context = {'pizzas':pizzas}
 
