@@ -1,0 +1,52 @@
+{% extends "pizzas/base.html" %}
+
+{% block page_header %}
+<h1>{{ pizza }} Pizza</h1>
+{% endblock page_header %}
+
+{% block content %}
+
+<div class="page-header">
+    <h4>Toppings</h4>
+</div>
+
+<ul>
+    {% for t in toppings %}
+    <li>
+        <p>{{ t }}</p>
+    </li>
+    {% empty %}
+    <li>There are no toppings on this pizza yet.</li>
+    {% endfor %}
+</ul>
+
+<div class="page-header">
+    <h4>Comments</h4>
+</div>
+
+
+<p>
+    <a href="{% url 'pizzas:new_comment' pizza.id %}">Add a new comment</a>
+</p>
+
+<ul>
+    {% for c in comments %}
+    <div class="card mb-3">
+        <h4 class="card-header">
+            {{ c.owner }} - {{ c.date_added|date:'M d, Y H:i' }}
+        </h4>
+        <div class="card-body">
+            {{ c | linebreaks }}
+        </div>
+    </div>
+    {% empty %}
+    <p>There are no comments for this pizza yet.</p>
+    {% endfor %}
+</ul>
+
+<body>
+    <img alt="Meat Lovers"
+        src=https://www.queensleeappetit.com/wp-content/uploads/2019/02/Meat-Lovers-Pizza-5-1-480x480.jpg">
+</body>
+
+{% endblock content %}

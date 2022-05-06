@@ -1,0 +1,19 @@
+{% extends "pizzas/base.html" %}
+
+{% block page_header %}
+<h1>Types of Pizza</h1>
+{% endblock page_header %}
+
+{% block content %}
+
+<ul>
+
+    {% for p in pizzas %}
+    <li>
+        <h3>
+            <a href="{% url 'pizzas:pizza' p.id %}">{{ p }}</a>
+        </h3>
+        {% endfor %}
+</ul>
+
+{% endblock content %}
