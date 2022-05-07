@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import CommentForm
 from .models import Pizza
-from django.contrib.auth.decorators import login_required 
+
 
 
 # Create your views here.
@@ -31,15 +31,16 @@ def pizza(request,pizza_id):
 #@login_required 
 def new_comment(request,pizza_id):
     pizza = Pizza.objects.get(id=pizza_id)
+
     if request.method != 'POST':
         form = CommentForm()
     else:
         form = CommentForm(data=request.POST)
+
         if form.is_valid:
             new_comment = form.save(commit=False)
             new_comment.pizza = pizza
             new_comment.save()
-
             return redirect('pizzas:pizza', pizza_id=pizza_id)
 
     context = {'form':form, 'pizza':pizza}
